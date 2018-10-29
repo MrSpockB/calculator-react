@@ -4,6 +4,7 @@
 .calculator {
   max-width: 300px;
   margin: 0 auto;
+  margin-top: 40px;
 }
 
 .row {
@@ -36,8 +37,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 3 0 75%;
-  width: 75%;
+  flex: 2 0 50%;
+  width: 50%;
   border: 1px solid rgb(221, 91, 91);
   font-size: 21px;
   color: #AAA;
