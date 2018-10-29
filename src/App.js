@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Calc</h1>
+        <div className="calculator">
+          <div className="row">
+            <div className="result">0</div>
+          </div>
+          <div className="row">
+            <div className="clear-button">clear</div>
+            <div className="op-btn">/</div>
+          </div>
+          <div className="row">
+            <div className="num-btn">7</div>
+            <div className="num-btn">8</div>
+            <div className="num-btn">9</div>
+            <div className="op-btn">-</div>
+          </div>
+          <div className="row">
+            <div className="num-btn">4</div>
+            <div className="num-btn">5</div>
+            <div className="num-btn">6</div>
+            <div className="op-btn">+</div>
+          </div>
+          <div className="row">
+            <div className="num-btn">1</div>
+            <div className="num-btn">2</div>
+            <div className="num-btn">3</div>
+            <div className="op-btn">=</div>
+          </div>
+        </div>
       </div>
     );
   }
