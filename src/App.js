@@ -8,8 +8,13 @@ class App extends Component {
     secondNum: null
   }
 
+  componentDidMount() {
+    window.onkeypress = this.onKeyPress.bind(this);
+  }
+
   onNumButtonClick = number => {
-    const key = (this.state.currentOp) ? 'secondNum' : 'firstNum';
+    const { currentOp } = this.state
+    const key = (currentOp) ? 'secondNum' : 'firstNum';
     this.setState(({ firstNum, secondNum }) => {
       const currVal = (key === 'firstNum') ? firstNum : secondNum;
       return {
@@ -18,6 +23,23 @@ class App extends Component {
     });
   }
 
+  onKeyPress = e => {
+    const { keyCode, key } = e;
+    if (keyCode >= 48 && keyCode <= 57) {
+      return this.onNumButtonClick(key);
+    }
+    if (key === '=' || key === 'Enter') {
+      return this.onEqualBtnClick();
+    }
+    if (
+      keyCode === 42 ||
+      keyCode === 43 ||
+      keyCode === 45 ||
+      keyCode === 47
+    ) {
+      return this.setOperation(key);
+    }
+  }
 
   setOperation = operation => {
     this.setState({
